@@ -1,8 +1,10 @@
 #include <iostream>
 #include <limits>
-using namespace std;
 
-void margin();
+//Including Operations Header File
+#include "operations.hpp"
+
+using namespace std;
 
 int main(){
 	
@@ -39,8 +41,4 @@ int main(){
 	}
 	return 0;
 
-}
-
-void margin(){
-	cout<<"==================================================================="<<endl;
 }
