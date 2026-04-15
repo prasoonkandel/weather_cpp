@@ -85,8 +85,9 @@ void getCords(string cityname, string countryname, vector<double> &cords){
 
     }
 
-    double lat = stod(response[0]["lat"].get<string>());
-    double lon = stod(response[0]["lon"].get<string>());
-    cords.push_back(lat);
-    cords.push_back(lon);
+    double latitude = stod(response[0]["lat"].get<string>());
+    double longitude = stod(response[0]["lon"].get<string>());
+    cords.push_back(latitude);
+    cords.push_back(longitude);
 }
+

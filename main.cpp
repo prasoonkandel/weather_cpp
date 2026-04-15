@@ -31,11 +31,11 @@ int main(){
 			loading();
 			getCords(cityname, countryname, cords);
 			loadingClear();
-			if(cords.size() != 0 ){
-			double lat = cords[0];
-			double lon = cords[1];
-			cout<<"  Latitude: "<<lat<<endl;
-			cout<<"  Longitude: "<<lon<<endl;
+			if(cords.size() >= 2 ){
+			double latitude = cords[0];
+			double longitude = cords[1];
+			cout<<"  Latitude: "<<latitude<<endl;
+			cout<<"  Longitude: "<<longitude<<endl;
 			margin();
 			}		
 		}
