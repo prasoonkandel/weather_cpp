@@ -19,8 +19,18 @@ using json = nlohmann::json;
 void margin(){
 	cout<<"==================================================================="<<endl;
 }
+//Loading Functions
+
+void loading() {
+    cout << "  Loading..." << flush;
+}
+
+void loadingClear() {
+    cout << "\r               \r" << flush;
+}
 
 //Various Operations
+
 string searchCity(string city, string country) {
     httplib::Client cli("https://nominatim.openstreetmap.org");
 
@@ -33,6 +43,7 @@ string searchCity(string city, string country) {
     auto res = cli.Get(path.c_str(), headers);
 
     if (!res || res->status != 200) {
+    	loadingClear();
         cout << "  HTTP error\n"; 
         return "";
     }
@@ -40,6 +51,7 @@ string searchCity(string city, string country) {
     json response = json::parse(res->body);
 
     if (!response.is_array() || response.empty()) {
+        loadingClear();
         cout << "  No results\n";
         return "";
     }

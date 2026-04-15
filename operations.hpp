@@ -6,6 +6,10 @@
 //Margin Functions
 void margin();
 
+//Loading Status Functions
+void loading();
+void loadingClear();
+
 //Various Operations
 std::vector<int> getCords(std::string cityname, std::string countryname);
 std::string searchCity(std::string cityname, std::string countryname);

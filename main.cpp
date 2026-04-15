@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
 	cout<<endl;
-	cout<<"#===========================Weather APP===========================#"<<endl;
+	cout<<"#========================== Weather APP ==========================#"<<endl;
 	cout<<endl;
 	bool running = true;
 	string cityname;
@@ -20,10 +20,12 @@ int main(){
 		cout<<"  Enter the name of country: ";
 		getline(cin, countryname);
 		margin();
+		loading();
 		string location = searchCity(cityname, countryname);
-		
+		loadingClear();
 		if(location != ""){
 			cout<<"  Location Info: "<<location<<endl;
+
 		}
 		margin();
 		cout<<"  Do you want to search again (y/n): ";
