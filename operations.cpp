@@ -58,3 +58,36 @@ string searchCity(string city, string country) {
 
     return response[0]["display_name"];
 }
+
+vector<double> getCords(string location){
+	vector<double> cords;
+	httplib::Client cli("https://nominatim.openstreetmap.org");
+	httplib::Headers headers = {
+		{ "User-Agent", "weather-app"},
+		{ "Accept-Language", "en"}
+ 	};
+
+ 	string path = "/search/?q=" + location + "&format=json";
+
+ 	auto res = cli.Get(path.c_str(), headers);
+
+ 	if (!res || res->status != 200) {
+    	loadingClear();
+        cout<<"  Error Fetching Coordinates.\n";
+        return cords;
+    }
+
+    json response = json::parse(res->body);
+
+    if(!response.is_array() || response.empty() ){
+    	loadingClear();
+    	cout<<"  Error Fetching Coordinates.\n";
+    	return cords;
+
+    }
+
+    cords.push_back(response[0]["lat"]);
+    cords.push_back(response[0]["lon"]);
+
+    return cords;
+}
