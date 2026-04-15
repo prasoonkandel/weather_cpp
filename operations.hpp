@@ -12,7 +12,7 @@ void loadingClear();
 
 //Various Operations
 std::string searchCity(std::string cityname, std::string countryname);
-std::vector<double> getCords(std::string location);
-void showWeather(int latitude, int longitude);
+void getCords(std::string cityname, std::string countryname, std::vector<double> &cords);
+void showWeather(double latitude, double longitude);
 
 #endif

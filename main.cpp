@@ -1,5 +1,6 @@
 #include <iostream>
 #include <limits>
+#include <vector>
 
 //Including Operations Header File
 #include "operations.hpp"
@@ -24,8 +25,19 @@ int main(){
 		string location = searchCity(cityname, countryname);
 		loadingClear();
 		if(location != ""){
+			vector<double> cords;
 			cout<<"  Location Info: "<<location<<endl;
-
+			margin();
+			loading();
+			getCords(cityname, countryname, cords);
+			loadingClear();
+			if(cords.size() != 0 ){
+			double lat = cords[0];
+			double lon = cords[1];
+			cout<<"  Latitude: "<<lat<<endl;
+			cout<<"  Longitude: "<<lon<<endl;
+			margin();
+			}		
 		}
 		margin();
 		cout<<"  Do you want to search again (y/n): ";

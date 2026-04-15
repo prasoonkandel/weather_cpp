@@ -31,14 +31,14 @@ void loadingClear() {
 
 //Various Operations
 
-string searchCity(string city, string country) {
+string searchCity(string cityname, string countryname) {
     httplib::Client cli("https://nominatim.openstreetmap.org");
 
     httplib::Headers headers = {
         { "User-Agent", "weather-app" },
         { "Accept-Language", "en" }
     };
-    string path = "/search?q=" + city + "," + country + "&format=json";
+    string path = "/search?q=" + cityname + "," + countryname + "&format=json";
 
     auto res = cli.Get(path.c_str(), headers);
 
@@ -59,22 +59,21 @@ string searchCity(string city, string country) {
     return response[0]["display_name"];
 }
 
-vector<double> getCords(string location){
-	vector<double> cords;
+void getCords(string cityname, string countryname, vector<double> &cords){
 	httplib::Client cli("https://nominatim.openstreetmap.org");
 	httplib::Headers headers = {
 		{ "User-Agent", "weather-app"},
 		{ "Accept-Language", "en"}
  	};
 
- 	string path = "/search/?q=" + location + "&format=json";
+ 	string path = "/search?q=" + cityname + "," + countryname + "&format=json";
 
  	auto res = cli.Get(path.c_str(), headers);
 
  	if (!res || res->status != 200) {
     	loadingClear();
         cout<<"  Error Fetching Coordinates.\n";
-        return cords;
+        return;
     }
 
     json response = json::parse(res->body);
@@ -82,12 +81,12 @@ vector<double> getCords(string location){
     if(!response.is_array() || response.empty() ){
     	loadingClear();
     	cout<<"  Error Fetching Coordinates.\n";
-    	return cords;
+        return;
 
     }
 
-    cords.push_back(response[0]["lat"]);
-    cords.push_back(response[0]["lon"]);
-
-    return cords;
+    double lat = stod(response[0]["lat"].get<string>());
+    double lon = stod(response[0]["lon"].get<string>());
+    cords.push_back(lat);
+    cords.push_back(lon);
 }
