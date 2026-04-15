@@ -8,9 +8,8 @@ void margin();
 
 //Various Operations
 std::vector<int> getCords(std::string cityname, std::string countryname);
-std::string fetchAPI(int latitude, int longitude);
 std::string searchCity(std::string cityname, std::string countryname);
-std::vector<std::string> getWeather();
+std::vector<std::string> showWeather(int latitude, int longitude);
 void displayOutput(std::vector<std::string> &data);
 
 #endif
