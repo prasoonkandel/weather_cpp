@@ -7,16 +7,24 @@
 using namespace std;
 
 int main(){
-	
+	cout<<endl;
 	cout<<"#===========================Weather APP===========================#"<<endl;
+	cout<<endl;
 	bool running = true;
 	string cityname;
+	string countryname;
 	char choice;
 	while(running){
 		cout<<"  Enter the name of city: ";
 		getline(cin, cityname);
+		cout<<"  Enter the name of country: ";
+		getline(cin, countryname);
 		margin();
-		cout<<"  The name of the city is: "<<cityname<<endl;
+		string location = searchCity(cityname, countryname);
+		
+		if(location != ""){
+			cout<<"  Location Info: "<<location<<endl;
+		}
 		margin();
 		cout<<"  Do you want to search again (y/n): ";
 		cin>>choice;
