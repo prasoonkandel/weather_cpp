@@ -117,7 +117,6 @@ void showWeather(double latitude, double longitude){
   
   }
     loadingClear();
-    cout<<"  Weather Report"<<endl;
     float temperature = response["current_weather"]["temperature"].get<float>(); 
     string temperature_unit = response["current_weather_units"]["temperature"].get<string>();
 
@@ -128,7 +127,8 @@ void showWeather(double latitude, double longitude){
     string winddirection_unit = response["current_weather_units"]["winddirection"].get<string>();
 
     string datetime = response["current_weather"]["time"].get<string>(); 
-
+    string date = datetime.substr(0, 10);
+    cout<<"  Date: "<<date<<endl;
     cout<<"  Temperature: "<<temperature<<temperature_unit<<endl;
     cout<<"  Wind Speed: "<<windspeed<<windspeed_unit<<endl;
     cout<<"  Wind Direction: "<<winddirection<<winddirection_unit<<endl;
