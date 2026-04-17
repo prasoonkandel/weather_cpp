@@ -37,6 +37,8 @@ int main(){
 			cout<<"  Latitude: "<<latitude<<endl;
 			cout<<"  Longitude: "<<longitude<<endl;
 			margin();
+			loading();
+			showWeather(latitude, longitude);
 			}		
 		}
 		margin();

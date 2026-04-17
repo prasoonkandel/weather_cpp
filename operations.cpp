@@ -91,3 +91,45 @@ void getCords(string cityname, string countryname, vector<double> &cords){
     cords.push_back(longitude);
 }
 
+void showWeather(double latitude, double longitude){
+    httplib::Client cli("https://api.open-meteo.com");
+    httplib::Headers headers = {
+        { "User-Agent", "weather-app"},
+        { "Accept-Language", "en"}
+    };
+
+    string path = "/v1/forecast?latitude=" + to_string(latitude) + "&longitude=" + to_string(longitude) + "&current_weather=true";
+
+    auto res = cli.Get(path.c_str(), headers);
+
+    if (!res || res->status != 200) {
+        loadingClear();
+        cout<<"  Error Fetching Weather Data.\n";
+        return;
+    }
+
+    json response = json::parse(res->body);
+
+    if(response.empty() ){
+        loadingClear();
+        cout<<"  Error Fetching Weather Data.\n";
+        return;
+  
+  }
+    loadingClear();
+    cout<<"  Weather Report"<<endl;
+    float temperature = response["current_weather"]["temperature"].get<float>(); 
+    string temperature_unit = response["current_weather_units"]["temperature"].get<string>();
+
+    float windspeed = response["current_weather"]["windspeed"].get<float>(); 
+    string windspeed_unit = response["current_weather_units"]["windspeed"].get<string>();
+
+    float winddirection = response["current_weather"]["winddirection"].get<float>(); 
+    string winddirection_unit = response["current_weather_units"]["winddirection"].get<string>();
+
+    string datetime = response["current_weather"]["time"].get<string>(); 
+
+    cout<<"  Temperature: "<<temperature<<temperature_unit<<endl;
+    cout<<"  Wind Speed: "<<windspeed<<windspeed_unit<<endl;
+    cout<<"  Wind Direction: "<<winddirection<<winddirection_unit<<endl;
+}
