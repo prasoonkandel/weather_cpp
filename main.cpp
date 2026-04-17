@@ -10,7 +10,7 @@ using namespace std;
 int main(){
 	cout<<endl;
 	cout<<"#========================== Weather APP ==========================#"<<endl;
-	cout<<endl;
+	cout<<endl;;
 	bool running = true;
 	string cityname;
 	string countryname;
@@ -39,7 +39,7 @@ int main(){
 			margin();
 			loading();
 			showWeather(latitude, longitude);
-			}		
+			}
 		}
 		margin();
 		cout<<"  Do you want to search again (y/n): ";

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <limits>
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
@@ -12,7 +11,7 @@
 #include "external/httplib.h"
 #include "external/json.hpp"
 
-using namespace std; 
+using namespace std;
 using json = nlohmann::json;
 
 //Margin Function
@@ -44,7 +43,7 @@ string searchCity(string cityname, string countryname) {
 
     if (!res || res->status != 200) {
     	loadingClear();
-        cout << "  HTTP error\n"; 
+        cout << "  HTTP error\n";
         return "";
     }
 
@@ -114,19 +113,19 @@ void showWeather(double latitude, double longitude){
         loadingClear();
         cout<<"  Error Fetching Weather Data.\n";
         return;
-  
+
   }
     loadingClear();
-    float temperature = response["current_weather"]["temperature"].get<float>(); 
+    float temperature = response["current_weather"]["temperature"].get<float>();
     string temperature_unit = response["current_weather_units"]["temperature"].get<string>();
 
-    float windspeed = response["current_weather"]["windspeed"].get<float>(); 
+    float windspeed = response["current_weather"]["windspeed"].get<float>();
     string windspeed_unit = response["current_weather_units"]["windspeed"].get<string>();
 
-    float winddirection = response["current_weather"]["winddirection"].get<float>(); 
+    float winddirection = response["current_weather"]["winddirection"].get<float>();
     string winddirection_unit = response["current_weather_units"]["winddirection"].get<string>();
 
-    string datetime = response["current_weather"]["time"].get<string>(); 
+    string datetime = response["current_weather"]["time"].get<string>();
     string date = datetime.substr(0, 10);
     cout<<"  Date: "<<date<<endl;
     cout<<"  Temperature: "<<temperature<<temperature_unit<<endl;
