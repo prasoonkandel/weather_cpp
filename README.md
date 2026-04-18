@@ -18,9 +18,16 @@ First of we must input the name of the city and country.
 
 After entering the cityname and countryname the, app searches full location of the city will be displayed. The latitude and longitide will be shown respectively fetching. Following that the weather information will be fetched and displayed.
 
-At the end, the program will ask if you want to search again or not (y/n).
+At the end, the program will ask if you want to search again or  not (y/n).
 
-# Build Command:
+## Project Structure:
+The structure of the files and subfolders of this project is presented below:
+
+![Folder Structure](./project_structure.png)
+
+**All the external libraries are kept in `/external` directory.**
+
+## Build Command:
 
 ```bash
 g++ -std=c++11 weather_cpp main.cpp operations.cpp -o app -lssl -lcrypto -pthread
