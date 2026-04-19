@@ -49,6 +49,7 @@ int main(){
 			break;
 			}
 			else if(choice == 'n' || choice == 'N'){
+            cout<<"  Thanks for using weather_cpp. Developer's Info: https://prasoonkandel.com/\n";
 			running = false;
 			break;
 			}
