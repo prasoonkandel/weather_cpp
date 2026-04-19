@@ -46,9 +46,11 @@ int main(){
 		cin>>choice;
 		while(true){
 			if(choice == 'y' || choice == 'Y'){
+			margin();
 			break;
 			}
 			else if(choice == 'n' || choice == 'N'){
+			margin();
             cout<<"  Thanks for using weather_cpp. Developer's Info: https://prasoonkandel.com/\n";
 			running = false;
 			break;
@@ -62,7 +64,6 @@ int main(){
             }
 		}
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		margin();
 	}
 	return 0;
 
