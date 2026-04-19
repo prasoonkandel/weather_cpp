@@ -7,6 +7,11 @@
 - Get current date of the city.
 - Get current temperature, wind speed and wind direction.
 
+## Demo Output:
+The demo output of this project is presented below:
+
+![Demo Output](./demo_output.png)
+
 ## Requirements
 
 - Linux/macOS/Windows
