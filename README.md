@@ -1,6 +1,8 @@
 # Weather Cpp
 **Weather Cpp is a simple terminal-based weather app built with C++.** It will help you know weather outside just from your terminal.
 
+![Fork Repo](https://github.com/prasoonkandel/weather_cpp/fork)
+
 # Features
 - Get full location if city by only entering countryname and cityname.
 - Get Latitude and longitude of the city.
