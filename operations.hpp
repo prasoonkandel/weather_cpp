@@ -14,5 +14,5 @@ void loadingClear();
 std::string searchCity(std::string cityname, std::string countryname);
 void getCords(std::string cityname, std::string countryname, std::vector<double> &cords);
 void showWeather(double latitude, double longitude);
-
+int weatherCode(int code);
 #endif
