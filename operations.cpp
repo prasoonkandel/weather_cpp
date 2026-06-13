@@ -127,8 +127,12 @@ void showWeather(double latitude, double longitude){
 
     string datetime = response["current"]["time"].get<string>();
     string date = datetime.substr(0, 10);
+
+    int weather_code = response["current"]["weather_code"].get<int>();
+    string weather = weatherCode(weather_code);
     cout<<"  Date: "<<date<<endl;
     cout<<"  Temperature: "<<temperature<<temperature_unit<<endl;
+    cout<<"  Weather: "<<weather<<endl;
     cout<<"  Wind Speed: "<<windspeed<<windspeed_unit<<endl;
     cout<<"  Wind Direction: "<<winddirection<<winddirection_unit<<endl;
     weatherCode(4);
