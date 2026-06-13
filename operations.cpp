@@ -97,7 +97,7 @@ void showWeather(double latitude, double longitude){
         { "Accept-Language", "en"}
     };
 
-    string path = "/v1/forecast?latitude=" + to_string(latitude) + "&longitude=" + to_string(longitude) + "&current_weather=true";
+    string path = "/v1/forecast?latitude=" + to_string(latitude) + "&longitude=" + to_string(longitude) + "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,weather_code";
 
     auto res = cli.Get(path.c_str(), headers);
 
@@ -116,16 +116,16 @@ void showWeather(double latitude, double longitude){
 
   }
     loadingClear();
-    float temperature = response["current_weather"]["temperature"].get<float>();
-    string temperature_unit = response["current_weather_units"]["temperature"].get<string>();
+    float temperature = response["current"]["temperature_2m"].get<float>();
+    string temperature_unit = response["current_units"]["temperature_2m"].get<string>();
 
-    float windspeed = response["current_weather"]["windspeed"].get<float>();
-    string windspeed_unit = response["current_weather_units"]["windspeed"].get<string>();
+    float windspeed = response["current"]["wind_speed_10m"].get<float>();
+    string windspeed_unit = response["current_units"]["wind_speed_10m"].get<string>();
 
-    float winddirection = response["current_weather"]["winddirection"].get<float>();
-    string winddirection_unit = response["current_weather_units"]["winddirection"].get<string>();
+    float winddirection = response["current"]["wind_direction_10m"].get<float>();
+    string winddirection_unit = response["current_units"]["wind_direction_10m"].get<string>();
 
-    string datetime = response["current_weather"]["time"].get<string>();
+    string datetime = response["current"]["time"].get<string>();
     string date = datetime.substr(0, 10);
     cout<<"  Date: "<<date<<endl;
     cout<<"  Temperature: "<<temperature<<temperature_unit<<endl;
