@@ -9,7 +9,7 @@
 - Get full location if city by only entering countryname and cityname.
 - Get Latitude and longitude of the city.
 - Get current date of the city.
-- Get current weather
+- Get current weather (rain, sunny etc.)
 - Get current temperature, wind speed and wind direction.
 
 ## Demo Output:
