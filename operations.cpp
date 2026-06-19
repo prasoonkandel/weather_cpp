@@ -71,7 +71,7 @@ void getCords(string cityname, string countryname, vector<double> &cords){
 
  	if (!res || res->status != 200) {
     	loadingClear();
-        cout<<"  Error Fetching Coordinates.\n";
+        cout<<"\033[1;31m  Error Fetching Coordinates.\033[0m\n";
         return;
     }
 
@@ -79,7 +79,7 @@ void getCords(string cityname, string countryname, vector<double> &cords){
 
     if(!response.is_array() || response.empty() ){
     	loadingClear();
-    	cout<<"  Error Fetching Coordinates.\n";
+    	cout<<"\033[1;31m  Error Fetching Coordinates.\033[0m\n";
         return;
 
     }
@@ -103,7 +103,7 @@ void showWeather(double latitude, double longitude){
 
     if (!res || res->status != 200) {
         loadingClear();
-        cout<<"  Error Fetching Weather Data.\n";
+        cout<<"\033[1;31m  Error Fetching Weather Data.\033[0m\n";
         return;
     }
 
@@ -111,7 +111,7 @@ void showWeather(double latitude, double longitude){
 
     if(response.empty() ){
         loadingClear();
-        cout<<"  Error Fetching Weather Data.\n";
+        cout<<"\033[1;31m  Error Fetching Weather Data.\033[0m\n";
         return;
 
   }
@@ -184,6 +184,6 @@ string weatherCode(int code) {
     case 99:
       return "Thunderstorm & Hail";
     default:
-      return "Unknown";
+      return "\033[1;31m Unknown \033[0m";
   }
 }
