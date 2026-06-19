@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
 	cout<<endl;
-	cout<<"#========================== Weather APP ==========================#"<<endl;
+	cout<<"\033[36m#==========================\033[1;36m Weather APP \033[36m==========================#\033[0m"<<endl;
 	cout<<endl;;
 	bool running = true;
 	string cityname;
@@ -51,7 +51,7 @@ int main(){
 			}
 			else if(choice == 'n' || choice == 'N'){
 			margin();
-            cout<<"  Thanks for using weather_cpp. Developer's Info: https://prasoonkandel.com/\n";
+            cout<<"\033[36m  Thanks for using weather_cpp. Developer's Info: https://prasoonkandel.com \033[0m\n";
 			running = false;
 			break;
 			}
