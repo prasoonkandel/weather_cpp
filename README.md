@@ -5,6 +5,8 @@
 
 ![Fork Repo](https://github.com/prasoonkandel/weather_cpp/fork)
 
+**Version: v1.1**
+
 # Features
 - Get full location if city by only entering countryname and cityname.
 - Get Latitude and longitude of the city.
