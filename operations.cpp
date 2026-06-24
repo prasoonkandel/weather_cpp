@@ -14,6 +14,24 @@
 using namespace std;
 using json = nlohmann::json;
 
+
+class Weather{
+    float temperature;
+    string temperature_unit;
+
+    float windspeed;
+    string windspeed_unit;
+
+    float winddirection;
+    string winddirection_unit;
+
+    string datetime;
+    string date;
+
+    int weather_code;
+    string weather;
+
+};
 //Margin Function
 void margin(){
 	cout<<"\033[32m===================================================================\033[0m"<<endl;
