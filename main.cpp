@@ -28,15 +28,10 @@ int main(){
 			vector<double> cords;
 			cout<<"  Location Info: "<<location<<endl;
 			margin();
-			loading();
 			getCords(cityname, countryname, cords);
-			loadingClear();
 			if(cords.size() >= 2 ){
 			double latitude = cords[0];
 			double longitude = cords[1];
-			cout<<"  Latitude: "<<latitude<<endl;
-			cout<<"  Longitude: "<<longitude<<endl;
-			margin();
 			loading();
 			showWeather(latitude, longitude);
 			}
