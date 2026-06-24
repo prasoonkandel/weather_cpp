@@ -13,6 +13,7 @@ void loadingClear();
 //Various Operations
 std::string searchCity(std::string cityname, std::string countryname);
 void getCords(std::string cityname, std::string countryname, std::vector<double> &cords);
+void fetchWeather(double latitude, double longitude);
 void showWeather(double latitude, double longitude);
 std::string weatherCode(int code);
 #endif
