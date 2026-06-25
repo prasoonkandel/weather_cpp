@@ -18,6 +18,15 @@ class Location{
     private:
         double latitude;
         double longitude;
+    public:
+        Location(double latitude, double longitude);
+
+        double getLatitude(){
+            return latitude;
+        }
+        double getLongitude(){
+            return longitude;
+        }
 };
 //Margin Function
 void margin(){
