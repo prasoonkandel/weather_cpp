@@ -14,20 +14,6 @@
 using namespace std;
 using json = nlohmann::json;
 
-class Location{
-    private:
-        double latitude;
-        double longitude;
-    public:
-        Location(double latitude, double longitude);
-
-        double getLatitude(){
-            return latitude;
-        }
-        double getLongitude(){
-            return longitude;
-        }
-};
 //Margin Function
 void margin(){
 	cout<<"\033[32m===================================================================\033[0m"<<endl;
