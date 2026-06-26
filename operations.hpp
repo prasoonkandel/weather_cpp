@@ -3,6 +3,20 @@
 #ifndef OPERATIONS_HPP
 #define OPERATIONS_HPP
 
+// Location Class
+class Location{
+    private:
+        double latitude;
+        double longitude;
+        double display_name;
+        std::string query;
+    public:
+        Location(std::string query);
+        double getLatitude();
+        double getLongitude();
+        void fetchCords(std::string display_name);
+        std::string searchLocation();
+};
 //Margin Functions
 void margin();
 
