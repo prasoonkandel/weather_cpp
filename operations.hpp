@@ -15,7 +15,7 @@ class Location{
         double getLatitude();
         double getLongitude();
         void fetchCords(std::string display_name);
-        std::string searchLocation();
+        void searchLocation();
 };
 //Margin Functions
 void margin();
