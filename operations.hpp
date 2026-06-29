@@ -8,7 +8,7 @@ class Location{
     private:
         double latitude;
         double longitude;
-        double display_name;
+        std::string display_name;
         std::string query;
     public:
         Location(std::string query);
