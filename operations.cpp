@@ -30,6 +30,10 @@ void loadingClear() {
 
 //Various Operations
 
+Location::Location(std::string query){
+    this->query = query;
+
+}
 void showWeather(double latitude, double longitude){
     httplib::Client cli("https://api.open-meteo.com");
     httplib::Headers headers = {
