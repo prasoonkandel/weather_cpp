@@ -34,6 +34,37 @@ Location::Location(std::string query){
     this->query = query;
 
 }
+
+
+void Location::searchLocation(){
+string searchCity(string cityname, string countryname) {
+httplib::Client cli("https://nominatim.openstreetmap.org");
+
+httplib::Headers headers = {
+{ "User-Agent", "weather-app" },
+{ "Accept-Language", "en" }
+};
+string path = "/search?q=" + this->query + "&format=json";
+
+auto res = cli.Get(path.c_str(), headers);
+
+if (!res || res->status != 200) {
+loadingClear();
+cout << " HTTP error\n";
+return;
+}
+
+json response = json::parse(res->body);
+
+if (!response.is_array() || response.empty()) {
+loadingClear();
+cout << " No results\n";
+return;
+}
+
+this->display_name = response[0]["display_name"];
+}
+
 void showWeather(double latitude, double longitude){
     httplib::Client cli("https://api.open-meteo.com");
     httplib::Headers headers = {
