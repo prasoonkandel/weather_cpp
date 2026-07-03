@@ -65,6 +65,31 @@ return;
 this->display_name = response[0]["display_name"];
 }
 
+void Location::fetchCords(string display_name){
+httplib::Client cli("https://nominatim.openstreetmap.org");
+httplib::Headers headers = {
+{ "User-Agent", "weather-app"},
+{ "Accept-Language", "en"}
+};
+
+
+string path = "/search?q=" + display_name + "&format=json";
+
+auto res = cli.Get(path.c_str(), headers);
+
+json response = json::parse(res->body);
+
+if(!response.is_array() || response.empty() ){
+loadingClear();
+cout<<"\033[1;31m Error Fetching Coordinates.\033[0m\n";
+return;
+
+}
+
+this->latitude = stod(response[0]["lat"].get<string>());
+this->longitude = stod(response[0]["lon"].get<string>());
+
+}
 void showWeather(double latitude, double longitude){
     httplib::Client cli("https://api.open-meteo.com");
     httplib::Headers headers = {
