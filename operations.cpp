@@ -37,7 +37,6 @@ Location::Location(std::string query){
 
 
 void Location::searchLocation(){
-string searchCity(string cityname, string countryname) {
 httplib::Client cli("https://nominatim.openstreetmap.org");
 
 httplib::Headers headers = {
