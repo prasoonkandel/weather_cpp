@@ -43,6 +43,9 @@ double Location::getLongitude(){
     return this-> longitude;
 }
 
+string Location::getDisplayName(){
+    return this-> display_name;
+}
 void Location::searchLocation(){
 httplib::Client cli("https://nominatim.openstreetmap.org");
 
