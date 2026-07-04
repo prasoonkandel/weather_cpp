@@ -14,6 +14,7 @@ class Location{
         Location(std::string query);
         double getLatitude();
         double getLongitude();
+        std::string getDisplayName();
         void fetchCords(std::string display_name);
         void searchLocation();
 };
