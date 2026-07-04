@@ -35,6 +35,13 @@ Location::Location(std::string query){
 
 }
 
+double Location::getLatitude(){
+    return this-> latitude;
+}
+
+double Location::getLongitude(){
+    return this-> longitude;
+}
 
 void Location::searchLocation(){
 httplib::Client cli("https://nominatim.openstreetmap.org");
