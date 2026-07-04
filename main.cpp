@@ -28,7 +28,7 @@ int main(){
 		loadingClear();
 		if(l1.getDisplayName() != ""){
 
-			cout<<"  Location Info: "<<location<<endl;
+			cout<<"  Location Info: "<<l1.getDisplayName()<<endl;
 			margin();
 			l1.fetchCords();
 			double latitude = l1.getLatitude();
