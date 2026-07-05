@@ -74,7 +74,10 @@ return;
 this->display_name = response[0]["display_name"];
 }
 
-void Location::fetchCords(string display_name){
+void Location::fetchCords(){
+
+string display_name = this->display_name;
+
 httplib::Client cli("https://nominatim.openstreetmap.org");
 httplib::Headers headers = {
 { "User-Agent", "weather-app"},
