@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
