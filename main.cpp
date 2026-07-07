@@ -22,24 +22,20 @@ int main(){
 		getline(cin, countryname);
 		margin();
 		loading();
-		string location = searchCity(cityname, countryname);
+		string query = cityname + "," + countryname;
+		Location l1(query);
+		l1.searchLocation();
 		loadingClear();
-		if(location != ""){
-			vector<double> cords;
-			cout<<"  Location Info: "<<location<<endl;
+		if(l1.getDisplayName() != ""){
+
+			cout<<"  Location Info: "<<l1.getDisplayName()<<endl;
 			margin();
-			loading();
-			getCords(cityname, countryname, cords);
-			loadingClear();
-			if(cords.size() >= 2 ){
-			double latitude = cords[0];
-			double longitude = cords[1];
-			cout<<"  Latitude: "<<latitude<<endl;
-			cout<<"  Longitude: "<<longitude<<endl;
-			margin();
+			l1.fetchCords();
+			double latitude = l1.getLatitude();
+			double longitude = l1.getLongitude();
 			loading();
 			showWeather(latitude, longitude);
-			}
+
 		}
 		margin();
 		cout<<"  Do you want to search again (y/n): ";
