@@ -18,6 +18,11 @@ class Location{
         void fetchCords();
         void searchLocation();
 };
+
+// Weather Class
+class weather{
+
+};
 //Margin Functions
 void margin();
 
