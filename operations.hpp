@@ -21,6 +21,22 @@ class Location{
 
 // Weather Class
 class weather{
+    double latitude;
+    double longitude;
+    float temperature;
+    std::string temperature_unit;
+
+    float windspeed;
+    std::string windspeed_unit;
+
+    float winddirection;
+    std::string winddirection_unit;
+
+    std::string datetime;
+    std::string date;
+
+    int weather_code;
+    std::string weather;
 
 };
 //Margin Functions
