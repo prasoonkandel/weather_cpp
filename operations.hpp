@@ -38,6 +38,9 @@ class weather{
     int weather_code;
     std::string weather;
 
+    public:
+    void fetchWeather();
+
 };
 //Margin Functions
 void margin();
