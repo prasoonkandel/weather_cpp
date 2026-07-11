@@ -20,9 +20,10 @@ class Location{
 };
 
 // Weather Class
-class weather{
+class Weather{
     double latitude;
     double longitude;
+
     float temperature;
     std::string temperature_unit;
 
