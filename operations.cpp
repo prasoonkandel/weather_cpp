@@ -101,6 +101,11 @@ this->latitude = stod(response[0]["lat"].get<string>());
 this->longitude = stod(response[0]["lon"].get<string>());
 
 }
+
+Weather::Weather(double latitude, double longitude){
+    this->latitude = latitude;
+    this->longitude = longitude;
+}
 void showWeather(double latitude, double longitude){
     httplib::Client cli("https://api.open-meteo.com");
     httplib::Headers headers = {
