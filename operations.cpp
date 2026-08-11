@@ -148,6 +148,7 @@ void Weather::fetchWeather(){
     int weather_code = response["current"]["weather_code"].get<int>();
     string weather = weatherCode(weather_code);
 }
+
 void showWeather(double latitude, double longitude){
     httplib::Client cli("https://api.open-meteo.com");
     httplib::Headers headers = {
