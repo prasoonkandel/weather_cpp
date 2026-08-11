@@ -158,7 +158,7 @@ void Weather::displayWeather(){
 }
 
 string Weather::getWeatherInfo() {
-        int code = this->weathercode;
+        int code = this->weather_code;
         switch (code) {
             case 0:
                 return "Sunny";
