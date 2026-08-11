@@ -18,6 +18,36 @@ class Location{
         void fetchCords();
         void searchLocation();
 };
+
+// Weather Class
+class Weather{
+    double latitude;
+    double longitude;
+
+    float temperature;
+    std::string temperature_unit;
+
+    float windspeed;
+    std::string windspeed_unit;
+
+    float winddirection;
+    std::string winddirection_unit;
+
+    std::string datetime;
+    std::string date;
+
+    int weather_code;
+    std::string weather;
+
+    std::string weatherDecoder(int code);
+
+    public:
+    Weather(double latitude, double longitude);
+    void fetchWeather();
+    void displayWeather();
+    std::string getWeatherInfo();
+
+};
 //Margin Functions
 void margin();
 
@@ -26,8 +56,5 @@ void loading();
 void loadingClear();
 
 //Various Operations
-std::string searchCity(std::string cityname, std::string countryname);
-void getCords(std::string cityname, std::string countryname, std::vector<double> &cords);
 void showWeather(double latitude, double longitude);
-std::string weatherCode(int code);
 #endif

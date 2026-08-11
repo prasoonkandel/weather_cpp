@@ -33,8 +33,10 @@ int main(){
 			l1.fetchCords();
 			double latitude = l1.getLatitude();
 			double longitude = l1.getLongitude();
+			Weather w1(latitude, longitude);
 			loading();
-			showWeather(latitude, longitude);
+			w1.fetchWeather();
+			w1.displayWeather();
 
 		}
 		margin();
