@@ -35,7 +35,7 @@ void errorMessage(std::string message, bool newLine){
     cout<<"\033[1;31m"<<"  "<<message<<"\033[0m";
     }
 }
-//Location Class Methods
+//Location Class Method
 Location::Location(std::string query){
     this->query = query;
 
@@ -159,11 +159,11 @@ void Weather::fetchWeather(){
 }
 
 void Weather::displayWeather(){
-    cout<<"  Date: "<<date<<endl;
-    cout<<"  Temperature: "<<temperature<<temperature_unit<<endl;
-    cout<<"  Weather: "<<weather<<endl;
-    cout<<"  Wind Speed: "<<windspeed<<windspeed_unit<<endl;
-    cout<<"  Wind Direction: "<<winddirection<<winddirection_unit<<endl;
+    cout<<"\033[1;m  Date: \033[0m"<<date<<endl;
+    cout<<"\033[1;m  Temperature: \033[0m"<<temperature<<temperature_unit<<endl;
+    cout<<"\033[1;m  Weather: \033[0m"<<weather<<endl;
+    cout<<"\033[1;m  Wind Speed: \033[0m"<<windspeed<<windspeed_unit<<endl;
+    cout<<"\033[1;m  Wind Direction: \033[0m"<<winddirection<<winddirection_unit<<endl;
 }
 
 string Weather::getWeatherInfo() {
