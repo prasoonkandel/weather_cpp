@@ -42,7 +42,7 @@ class Weather{
     std::string weatherDecoder(int code);
 
     public:
-    Weather(double latitude, double longitude);
+    Weather(Location location);
     void fetchWeather();
     void displayWeather();
     std::string getWeatherInfo();

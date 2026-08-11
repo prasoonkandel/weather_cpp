@@ -110,9 +110,9 @@ this->longitude = stod(response[0]["lon"].get<string>());
 }
 
 //Weather Class Methods
-Weather::Weather(double latitude, double longitude){
-    this->latitude = latitude;
-    this->longitude = longitude;
+Weather::Weather(Location location){
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
 }
 
 void Weather::fetchWeather(){
