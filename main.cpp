@@ -11,17 +11,13 @@ int main(){
 	cout<<"\033[36m#==========================\033[1;36m Weather APP \033[36m==========================#\033[0m"<<endl;
 	cout<<endl;;
 	bool running = true;
-	string cityname;
-	string countryname;
+	string query;
 	char choice;
 	while(running){
-		cout<<"  Enter the name of city: ";
-		getline(cin, cityname);
-		cout<<"  Enter the name of country: ";
-		getline(cin, countryname);
+		cout<<"  Enter the full location: ";
+		getline(cin, query);
 		margin();
 		loading();
-		string query = cityname + "," + countryname;
 		Location l1(query);
 		l1.searchLocation();
 		loadingClear();

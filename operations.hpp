@@ -48,6 +48,7 @@ class Weather{
     std::string getWeatherInfo();
 
 };
+
 //Margin Functions
 void margin();
 
