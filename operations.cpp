@@ -18,7 +18,6 @@ void margin(){
 	cout<<"\033[32m===================================================================\033[0m"<<endl;
 }
 //Loading Functions
-
 void loading() {
     cout << "  Loading..." << flush;
 }
@@ -27,8 +26,16 @@ void loadingClear() {
     cout << "\r               \r" << flush;
 }
 
-//Various Operations
-
+//Message Functions
+void errorMessage(std::string message, bool newLine){
+    if(newLine){
+    cout<<"\033[1;31m"<<"  "<<message<<"\033[0m"<<endl;
+    }
+    else{
+    cout<<"\033[1;31m"<<"  "<<message<<"\033[0m";
+    }
+}
+//Location Class Methods
 Location::Location(std::string query){
     this->query = query;
 
@@ -102,6 +109,7 @@ this->longitude = stod(response[0]["lon"].get<string>());
 
 }
 
+//Weather Class Methods
 Weather::Weather(double latitude, double longitude){
     this->latitude = latitude;
     this->longitude = longitude;
