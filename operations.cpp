@@ -121,7 +121,7 @@ return;
 
 this->latitude = stod(response[0]["lat"].get<string>());
 this->longitude = stod(response[0]["lon"].get<string>());
-
+fetched = true;
 }
 
 //Weather Class Methods
@@ -133,6 +133,7 @@ Weather::Weather(Location location){
         catch(runtime_error& e){
             errorMessage(e.what(), 1);
         }
+        fetched = false;
 }
 
 void Weather::fetchWeather(){
@@ -176,9 +177,14 @@ void Weather::fetchWeather(){
 
     weather_code = response["current"]["weather_code"].get<int>();
     weather = getWeatherInfo();
+
+    fetched = true;
 }
 
 void Weather::displayWeather(){
+    if(!fetched){
+        throw runtime_error("Weather not fetched");
+    }
     cout<<"\033[1;m  Date: \033[0m"<<date<<endl;
     cout<<"\033[1;m  Temperature: \033[0m"<<temperature<<temperature_unit<<endl;
     cout<<"\033[1;m  Weather: \033[0m"<<weather<<endl;

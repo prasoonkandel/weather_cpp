@@ -39,8 +39,7 @@ class Weather{
     int weather_code;
     std::string weather;
 
-    std::string weatherDecoder(int code);
-
+    bool fetched;
     public:
     Weather(Location location);
     void fetchWeather();

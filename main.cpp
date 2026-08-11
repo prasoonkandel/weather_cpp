@@ -1,5 +1,6 @@
 #include <iostream>
 #include <limits>
+#include <stdexcept>
 
 //Including Operations Header File
 #include "operations.hpp"
@@ -31,7 +32,12 @@ int main(){
 			Weather w1(l1);
 			loading();
 			w1.fetchWeather();
+			try{
 			w1.displayWeather();
+			}
+			catch(runtime_error& e){
+			continue;
+			}
 
 		}
 		catch(runtime_error& e){
