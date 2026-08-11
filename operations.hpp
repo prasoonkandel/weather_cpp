@@ -1,5 +1,4 @@
 #include <string>
-#include <vector>
 #ifndef OPERATIONS_HPP
 #define OPERATIONS_HPP
 
@@ -10,6 +9,7 @@ class Location{
         double longitude;
         std::string display_name;
         std::string query;
+        bool fetched;
     public:
         Location(std::string query);
         double getLatitude();

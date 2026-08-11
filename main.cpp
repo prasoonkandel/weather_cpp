@@ -21,7 +21,7 @@ int main(){
 		Location l1(query);
 		l1.searchLocation();
 		loadingClear();
-		if(l1.getDisplayName() != ""){
+		try{
 
 			cout<<"  Location Info: "<<l1.getDisplayName()<<endl;
 			margin();
@@ -33,6 +33,9 @@ int main(){
 			w1.fetchWeather();
 			w1.displayWeather();
 
+		}
+		catch(runtime_error& e){
+		errorMessage(e.what(), 1);
 		}
 		margin();
 		cout<<"  Do you want to search again (y/n): ";

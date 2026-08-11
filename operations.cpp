@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 #include <string>
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
@@ -42,18 +43,28 @@ void errorMessage(std::string message, bool newLine){
 //Location Class Method
 Location::Location(std::string query){
     this->query = query;
+    fetched = false;
 
 }
 
 double Location::getLatitude(){
+    if(!fetched){
+        throw runtime_error("Location not fetched");
+    }
     return this-> latitude;
 }
 
 double Location::getLongitude(){
+    if(!fetched){
+        throw runtime_error("Location not fetched");
+    }
     return this-> longitude;
 }
 
 string Location::getDisplayName(){
+    if(!fetched){
+        throw runtime_error("Location not fetched");
+    }
     return this-> display_name;
 }
 void Location::searchLocation(){
@@ -115,8 +126,13 @@ this->longitude = stod(response[0]["lon"].get<string>());
 
 //Weather Class Methods
 Weather::Weather(Location location){
+        try{
         latitude = location.getLatitude();
         longitude = location.getLongitude();
+        }
+        catch(runtime_error& e){
+            errorMessage(e.what(), 1);
+        }
 }
 
 void Weather::fetchWeather(){
