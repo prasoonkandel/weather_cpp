@@ -53,7 +53,7 @@ class Weather{
 void margin();
 void loading();
 void loadingClear();
-
+void clearScreen();
 //Message Functions
 void errorMessage(std::string message, bool newLine);
 

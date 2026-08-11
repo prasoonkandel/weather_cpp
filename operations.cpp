@@ -26,6 +26,10 @@ void loadingClear() {
     cout << "\r               \r" << flush;
 }
 
+void clearScreen() {
+    std::cout << "\033[H\033[2J" << std::flush;
+}
+
 //Message Functions
 void errorMessage(std::string message, bool newLine){
     if(newLine){
