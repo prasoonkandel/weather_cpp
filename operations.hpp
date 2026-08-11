@@ -49,10 +49,8 @@ class Weather{
 
 };
 
-//Margin Functions
+//Utility Functions
 void margin();
-
-//Loading Status Functions
 void loading();
 void loadingClear();
 

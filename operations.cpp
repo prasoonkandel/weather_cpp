@@ -13,11 +13,11 @@
 using namespace std;
 using json = nlohmann::json;
 
-//Margin Function
+//Utility Functions
 void margin(){
 	cout<<"\033[32m===================================================================\033[0m"<<endl;
 }
-//Loading Functions
+
 void loading() {
     cout << "  Loading..." << flush;
 }
