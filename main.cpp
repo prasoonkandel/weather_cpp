@@ -1,6 +1,5 @@
 #include <iostream>
 #include <limits>
-#include <vector>
 
 //Including Operations Header File
 #include "operations.hpp"
@@ -56,7 +55,7 @@ int main(){
 			else{
 				cin.clear();
 				cin.ignore(numeric_limits<streamsize>::max(),'\n');
-				cout<<"  Invalid Input. Please Try Aagain. "<<endl;
+				errorMessage("Invalid Input. Please Try Aagain.", 1);
 				cout<<"  Do you want to search again (y/n): ";
 				cin>>choice;
             }

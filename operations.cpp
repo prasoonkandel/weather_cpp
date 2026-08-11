@@ -65,7 +65,7 @@ auto res = cli.Get(path.c_str(), headers);
 
 if (!res || res->status != 200) {
 loadingClear();
-cout << " HTTP error\n";
+errorMessage("HTTP Error", 1);
 return;
 }
 
@@ -73,7 +73,7 @@ json response = json::parse(res->body);
 
 if (!response.is_array() || response.empty()) {
 loadingClear();
-cout << " No results\n";
+errorMessage("No results", 1);
 return;
 }
 
@@ -128,7 +128,8 @@ void Weather::fetchWeather(){
 
     if (!res || res->status != 200) {
         loadingClear();
-        cout<<"\033[1;31m  Error Fetching Weather Data.\033[0m\n";
+        cout<<"\033[1;31m  \033[0m\n";
+        errorMessage("Error Fetching Weather Data.", 1);
         return;
     }
 
@@ -136,7 +137,7 @@ void Weather::fetchWeather(){
 
     if(response.empty() ){
         loadingClear();
-        cout<<"\033[1;31m  Error Fetching Weather Data.\033[0m\n";
+        errorMessage("Error Fetching Weather Data.", 1);
         return;
 
   }
