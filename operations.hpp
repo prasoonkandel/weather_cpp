@@ -55,6 +55,5 @@ void margin();
 void loading();
 void loadingClear();
 
-//Various Operations
-void showWeather(double latitude, double longitude);
+
 #endif
