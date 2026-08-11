@@ -49,22 +49,19 @@ Location::Location(std::string query){
 
 double Location::getLatitude(){
     if(!fetched){
-        throw runtime_error("Location not fetched");
+        throw runtime_error("Coordinates not fetched");
     }
     return this-> latitude;
 }
 
 double Location::getLongitude(){
     if(!fetched){
-        throw runtime_error("Location not fetched");
+        throw runtime_error("Coordinates not fetched");
     }
     return this-> longitude;
 }
 
 string Location::getDisplayName(){
-    if(!fetched){
-        throw runtime_error("Location not fetched");
-    }
     return this-> display_name;
 }
 void Location::searchLocation(){

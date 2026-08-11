@@ -1,6 +1,5 @@
 #include <iostream>
 #include <limits>
-#include <stdexcept>
 
 //Including Operations Header File
 #include "operations.hpp"
@@ -22,26 +21,16 @@ int main(){
 		Location l1(query);
 		l1.searchLocation();
 		loadingClear();
-		try{
+		if(l1.getDisplayName() != ""){
 
 			cout<<"  Location Info: "<<l1.getDisplayName()<<endl;
 			margin();
 			l1.fetchCords();
-			double latitude = l1.getLatitude();
-			double longitude = l1.getLongitude();
 			Weather w1(l1);
 			loading();
 			w1.fetchWeather();
-			try{
 			w1.displayWeather();
-			}
-			catch(runtime_error& e){
-			continue;
-			}
 
-		}
-		catch(runtime_error& e){
-		errorMessage(e.what(), 1);
 		}
 		margin();
 		cout<<"  Do you want to search again (y/n): ";
