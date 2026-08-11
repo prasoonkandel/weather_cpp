@@ -45,6 +45,7 @@ class Weather{
     Weather(double latitude, double longitude);
     void fetchWeather();
     void displayWeather();
+    std::string getWeatherInfo();
 
 };
 //Margin Functions
@@ -56,5 +57,4 @@ void loadingClear();
 
 //Various Operations
 void showWeather(double latitude, double longitude);
-std::string weatherCode(int code);
 #endif
