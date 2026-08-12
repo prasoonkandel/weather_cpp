@@ -12,10 +12,17 @@
 - Get current weather (rain, sunny, cloudy etc.)
 - Get current temperature, wind speed and wind direction.
 - Colourful Output using ANSI colour codes.
+- Welcome and Farewell messages.
 
 ## Demo Output:
 The demo output of this project is presented below:
+1. Input
+![Demo Input](./demo_input.png)
 
+2. Loading
+![Demo Loading](./demo_loadinf.png) 
+
+3. Output
 ![Demo Output](./demo_output.png)
 
 ## Requirements
