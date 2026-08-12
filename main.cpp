@@ -42,7 +42,7 @@ int main(){
 			}
 			else if(choice == 'n' || choice == 'N'){
 			margin();
-            cout<<"\033[36m  Thanks for using weather_cpp. Developer's Info: https://prasoonkandel.com \033[0m\n";
+            cout<<"  Thanks for using weather_cpp. Developer's Info: https://prasoonkandel.com \n";
 			running = false;
 			break;
 			}
