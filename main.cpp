@@ -25,7 +25,6 @@ int main(){
 
 			cout<<"  Location Info: "<<l1.getDisplayName()<<endl;
 			margin();
-			l1.fetchCords();
 			Weather w1(l1);
 			loading();
 			w1.fetchWeather();
