@@ -20,7 +20,7 @@ The demo output of this project is presented below:
 ![Demo Input](./demo_input.png)
 
 2. Loading
-![Demo Loading](./demo_loadinf.png) 
+![Demo Loading](./demo_loading.png) 
 
 3. Output
 ![Demo Output](./demo_output.png)
