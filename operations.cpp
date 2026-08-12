@@ -89,57 +89,19 @@ return;
 }
 
 this->display_name = response[0]["display_name"];
-}
-
-void Location::fetchCords(){
-
-string display_name = this->display_name;
-
-httplib::Client cli("https://nominatim.openstreetmap.org");
-httplib::Headers headers = {
-{ "User-Agent", "weather-app"},
-{ "Accept-Language", "en"}
-};
-
-
-string path = "/search?q=" + display_name + "&format=json";
-
-auto res = cli.Get(path.c_str(), headers);
-
-if (!res || res->status != 200) {
-loadingClear();
-errorMessage("HTTP Error", 1);
-return;
-}
-
-json response = json::parse(res->body);
-
-if(!response.is_array() || response.empty() ){
-loadingClear();
-cout<<"\033[1;31m Error Fetching Coordinates.\033[0m\n";
-return;
-
-}
-
 this->latitude = stod(response[0]["lat"].get<string>());
 this->longitude = stod(response[0]["lon"].get<string>());
+
 fetched = true;
 }
 
 //Weather Class Methods
 Weather::Weather(const Location& l)
+: location(l)
 {
-        location = l;
-        try{
         latitude = location.getLatitude();
         longitude = location.getLongitude();
         fetched = false;
-        }
-        catch(runtime_error& e){
-            string* errorptr = new string("Can't initialize weather class: " + string(e.what()));
-            errorMessage(*errorptr , 1);
-            delete errorptr;
-        }
 
 }
 

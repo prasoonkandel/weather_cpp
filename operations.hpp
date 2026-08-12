@@ -16,12 +16,12 @@ class Location{
         double getLatitude();
         double getLongitude();
         std::string getDisplayName();
-        void fetchCords();
         void searchLocation();
 };
 
 // Weather Class
 class Weather{
+    Location location;
     double latitude;
     double longitude;
 
@@ -42,7 +42,7 @@ class Weather{
 
     bool fetched;
 
-    Location location;
+
     public:
     Weather(const Location& location);
     void fetchWeather();
