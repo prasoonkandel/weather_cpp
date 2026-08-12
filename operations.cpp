@@ -47,6 +47,11 @@ Location::Location(std::string query){
 
 }
 
+Location::Location(){
+    fetched = false;
+
+}
+
 double Location::getLatitude(){
     if(!fetched){
         throw runtime_error("Coordinates not fetched");
@@ -122,7 +127,9 @@ fetched = true;
 }
 
 //Weather Class Methods
-Weather::Weather(Location location){
+Weather::Weather(const Location& l)
+{
+        location = l;
         try{
         latitude = location.getLatitude();
         longitude = location.getLongitude();
@@ -182,11 +189,15 @@ void Weather::displayWeather(){
     if(!fetched){
         throw runtime_error("Weather not fetched");
     }
+    clearScreen();
+    cout<<"\033[36m#==========================\033[1;36m Weather Info \033[36m==========================#\033[0m"<<endl;
     cout<<"\033[1;m  Date: \033[0m"<<date<<endl;
+    cout<<"\033[1;m  Location: \033[0m"<<location.getDisplayName()<<endl;
     cout<<"\033[1;m  Temperature: \033[0m"<<temperature<<temperature_unit<<endl;
     cout<<"\033[1;m  Weather: \033[0m"<<weather<<endl;
     cout<<"\033[1;m  Wind Speed: \033[0m"<<windspeed<<windspeed_unit<<endl;
     cout<<"\033[1;m  Wind Direction: \033[0m"<<winddirection<<winddirection_unit<<endl;
+    cout<<"\033[36m#================================================================#\033[0m"<<endl;
 }
 
 string Weather::getWeatherInfo() {

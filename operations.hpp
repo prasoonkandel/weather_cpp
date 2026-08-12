@@ -12,6 +12,7 @@ class Location{
         bool fetched;
     public:
         Location(std::string query);
+        Location();
         double getLatitude();
         double getLongitude();
         std::string getDisplayName();
@@ -40,8 +41,10 @@ class Weather{
     std::string weather;
 
     bool fetched;
+
+    Location location;
     public:
-    Weather(Location location);
+    Weather(const Location& location);
     void fetchWeather();
     void displayWeather();
     std::string getWeatherInfo();

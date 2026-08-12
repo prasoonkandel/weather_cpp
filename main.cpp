@@ -7,13 +7,13 @@
 using namespace std;
 
 int main(){
-	cout<<endl;
-	cout<<"\033[36m#==========================\033[1;36m Weather APP \033[36m==========================#\033[0m"<<endl;
-	cout<<endl;;
 	bool running = true;
 	string query;
 	char choice;
 	while(running){
+	cout<<endl;
+	cout<<"\033[36m#==========================\033[1;36m Weather CPP \033[36m==========================#\033[0m"<<endl;
+	cout<<endl;;
 		cout<<"  Enter the full location: ";
 		getline(cin, query);
 		margin();
@@ -37,7 +37,7 @@ int main(){
 		cin>>choice;
 		while(true){
 			if(choice == 'y' || choice == 'Y'){
-			margin();
+			clearScreen();
 			break;
 			}
 			else if(choice == 'n' || choice == 'N'){
