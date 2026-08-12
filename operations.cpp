@@ -80,12 +80,6 @@ string path = "/search?q=" + this->query + "&format=json";
 
 auto res = cli.Get(path.c_str(), headers);
 
-if (!res || res->status != 200) {
-loadingClear();
-errorMessage("HTTP Error", 1);
-return;
-}
-
 json response = json::parse(res->body);
 
 if (!response.is_array() || response.empty()) {
@@ -112,6 +106,12 @@ string path = "/search?q=" + display_name + "&format=json";
 
 auto res = cli.Get(path.c_str(), headers);
 
+if (!res || res->status != 200) {
+loadingClear();
+errorMessage("HTTP Error", 1);
+return;
+}
+
 json response = json::parse(res->body);
 
 if(!response.is_array() || response.empty() ){
@@ -133,11 +133,14 @@ Weather::Weather(const Location& l)
         try{
         latitude = location.getLatitude();
         longitude = location.getLongitude();
+        fetched = false;
         }
         catch(runtime_error& e){
-            errorMessage(e.what(), 1);
+            string* errorptr = new string("Can't initialize weather class: " + string(e.what()));
+            errorMessage(*errorptr , 1);
+            delete errorptr;
         }
-        fetched = false;
+
 }
 
 void Weather::fetchWeather(){
