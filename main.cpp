@@ -11,7 +11,7 @@ int main(){
 	string query;
 	char choice;
 	while(running){
-	cout<<endl;
+	clearScreen();
 	cout<<"\033[36m#==========================\033[1;36m Weather CPP \033[36m==========================#\033[0m"<<endl;
 	cout<<endl;;
 		cout<<"  Enter the full location: ";

@@ -197,7 +197,7 @@ void Weather::displayWeather(){
     cout<<"\033[1;m  Weather: \033[0m"<<weather<<endl;
     cout<<"\033[1;m  Wind Speed: \033[0m"<<windspeed<<windspeed_unit<<endl;
     cout<<"\033[1;m  Wind Direction: \033[0m"<<winddirection<<winddirection_unit<<endl;
-    cout<<"\033[36m#================================================================#\033[0m"<<endl;
+    cout<<"\033[36m===================================================================\033[0m"<<endl;
 }
 
 string Weather::getWeatherInfo() {
