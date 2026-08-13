@@ -83,9 +83,9 @@ auto res = cli.Get(path.c_str(), headers);
 json response = json::parse(res->body);
 
 if (!response.is_array() || response.empty()) {
-loadingClear();
-errorMessage("No results", 1);
-return;
+    loadingClear();
+    errorMessage("No results", 1);
+    return;
 }
 
 this->display_name = response[0]["display_name"];
@@ -93,6 +93,7 @@ this->latitude = stod(response[0]["lat"].get<string>());
 this->longitude = stod(response[0]["lon"].get<string>());
 
 fetched = true;
+
 }
 
 //Weather Class Methods
