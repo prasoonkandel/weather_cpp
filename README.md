@@ -45,6 +45,10 @@ The structure of the files and subfolders of this project is presented below:
 
 **All the external libraries are kept in `/external` directory.**
 
+For this project a operations header file is made that contains various utility functions alongside `Location` class and `Weather class.
+
+`Location` class contains all the atributes and methods related to location and `Weather` class contains all the attributes and methods related to weather.
+
 ## Build Command:
 
 ```bash
